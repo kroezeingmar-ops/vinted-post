@@ -111,6 +111,7 @@ def format_listing(item):
 
 def main():
     seen_ids = load_seen_ids()
+    is_first_run = len(seen_ids) == 0
 
     print("Fetching listings from Marktplaats via Apify...")
     items = fetch_items()
@@ -139,6 +140,9 @@ def main():
     seen_ids.update(new_ids)
     save_seen_ids(seen_ids)
     print(f"Done — {sent} new listings sent to Telegram.")
+
+    if is_first_run:
+        send_telegram("✅ Marktplaats scanner is active and running.")
 
 
 if __name__ == "__main__":
