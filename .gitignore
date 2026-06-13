@@ -1,0 +1,15 @@
+# Secrets — never commit
+codes.txt
+
+# Runtime files
+seen_ids.json
+live_results.json
+
+# Test/dev files
+test_filter.py
+dataset_*.json
+python vinted_check.py
+
+# Python cache
+__pycache__/
+*.pyc
